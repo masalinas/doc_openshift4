@@ -62,4 +62,14 @@ $ crc console
 
 ![Captura de pantalla 2024-03-23 a las 17 57 37](https://github.com/masalinas/doc_openshift4/assets/1216181/e313e583-b67e-4ca5-8960-ed10d936c24a)
 
+**STEP07**: stops the OpenShift cluster
 
+```
+$ crc stop 
+```
+
+**STEP08**: completely deletes the cluster
+
+```
+$ crc delete 
+```
