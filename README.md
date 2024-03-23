@@ -15,15 +15,13 @@ Download pull-secret.txt file from the same link
 
 **STEP03**: execute configuration
 
-Configure pull secret before start
+Configure pull secret before start installation
 
 ```
 $ crc config set pull-secret-file ./pull-secret.txt
 ```
 
-**STEP04**: start installation
-
-Start installation
+**STEP04**: start cluster installation
 
 ```
 $ crc start
@@ -50,7 +48,7 @@ Use the 'oc' command line interface:
   $ oc login -u developer https://api.crc.testing:6443
 ```
 
-**STEP05**: check status
+**STEP05**: check cluster status
 
 ```
 $ crc status
@@ -62,7 +60,7 @@ Cache Usage:     38.18GB
 Cache Directory: /Users/miguel/.crc/cache
 ```
 
-**STEP06**: access console
+**STEP06**: access openshift console
 
 ```
 $ crc console
