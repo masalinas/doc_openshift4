@@ -1,2 +1,44 @@
-# doc_openshift4
+# Description
 Install Openshift 4 with crc
+
+# Download the crc
+
+**STEP01**: Download crc client from [Redhat Openshift Local](https://console.redhat.com/openshift/create/local)
+
+**STEP02**: Download pull-secret.txt file from the same link
+
+
+[pull-secret.txt](https://github.com/masalinas/doc_openshift4/files/14732976/pull-secret.txt){"auths":{"cloud.openshift.com":{"auth":"b3BlbnNoaWZ0LXJlbGVhc2UtZGV2K29jbV9hY2Nlc3NfMjgyZjBlNTFlMTIwNDBhMThjNGI5Y2RlNDRhMTMxNzc6SERQS084T0paVFZKUlNWWkVRRTkxRjFFV1MwTEtaRVBMVjBNWEFJTDZEMlE3NkJPMEEyT0xVRkRNUk5YRUZRNA==","email":"masalinas.gancedo@gmail.com"},"quay.io":{"auth":"b3BlbnNoaWZ0LXJlbGVhc2UtZGV2K29jbV9hY2Nlc3NfMjgyZjBlNTFlMTIwNDBhMThjNGI5Y2RlNDRhMTMxNzc6SERQS084T0paVFZKUlNWWkVRRTkxRjFFV1MwTEtaRVBMVjBNWEFJTDZEMlE3NkJPMEEyT0xVRkRNUk5YRUZRNA==","email":"masalinas.gancedo@gmail.com"},"registry.connect.redhat.com":{"auth":"fHVoYy1wb29sLTJkMGJiMjkzLWE4OWMtNDhjZC04MDdlLTg1MjQxYWEzMDE2ZDpleUpoYkdjaU9pSlNVelV4TWlKOS5leUp6ZFdJaU9pSmxaRFkyWVRrME1UY3lORGswWVRObE9EVXhOVEl5TmpObE5qUXpaREpoTVNKOS5kVTItNjlhcGVLN3Mzb1ItWlhMTHVpQy1BMFY5c1dpR3ZtZFdQVUNJZVlHc050QXIxVXNkVFRjTVNSZUkwWlhWQ3AzZ2tNNTB6dmlPNXpUdDY3cTNNdkdRUlhWOW1oOW5JR2R6ZGdiZ1ZOVk9pYmlQSmphTWp6SWZkMGlydzREMEFOdVllSzRTaW0xTkJ2NU5NaklXMFFRcnpSTGhEdC1PQy1TU2F6aXhXcGN6RkxCODZSNENMbEVxTWwyOVF1TEdnbERORWttS3N5V2ItUTE4OU5GQlRrbTdWS0pjNUNfNTBQZHpXcDlyc3NSU3pOaFFuRFZtLWRQY2QydE1sMm9SS0R0SmNkYWJvd01OTjFLczFzVHh2TmNyX1BodzgteGpnSkR0angzWG80eFFhQXQ4NU9NOVdzcG1RNnJsYnpoSzZhT0twZWRoLVBmUzYwV3l3TmhObV9xcWRYRW9PY1Nicnpoc2wtR19qNl9JZmRPVUM3MGVUV3d5YUJlVHMzNUdELXdvMmxPaHBOT3NjOW5sY19pLTJCWm4xdFFmZnE3dDBzbFlnYmFncHI0ZTE2bFlLX2FUdVlhemNSYWpEekxuRlFDdndLVlRhM19udkhLMnV5REIyeS1tZ2lJenNvRnUxeE1zZHRSSXB4OGRYdUlkZzREV09vQlo3bWd6MUYwS0lGX3NNVi1DMUl2QVluWjh3VlBIU1o5N3dYMVJOQWFCXzdmbmxNSFk1TkhSRUNFTWhwSXhfaWJqRXB3WUdPLW5qUzhsOGliX2FjbmZLN1FCN1R2dmxYdmpNTEpOWlU4N2MwcU1Zalo3RnZUem9YWEdRWVFWakFIUGk1U2VldHN6d2I3SmpaOExSX0dxaGhRRUdldGdiamkzdENVVC1keml4aS1XS0g2T25lOA==","email":"masalinas.gancedo@gmail.com"},"registry.redhat.io":{"auth":"fHVoYy1wb29sLTJkMGJiMjkzLWE4OWMtNDhjZC04MDdlLTg1MjQxYWEzMDE2ZDpleUpoYkdjaU9pSlNVelV4TWlKOS5leUp6ZFdJaU9pSmxaRFkyWVRrME1UY3lORGswWVRObE9EVXhOVEl5TmpObE5qUXpaREpoTVNKOS5kVTItNjlhcGVLN3Mzb1ItWlhMTHVpQy1BMFY5c1dpR3ZtZFdQVUNJZVlHc050QXIxVXNkVFRjTVNSZUkwWlhWQ3AzZ2tNNTB6dmlPNXpUdDY3cTNNdkdRUlhWOW1oOW5JR2R6ZGdiZ1ZOVk9pYmlQSmphTWp6SWZkMGlydzREMEFOdVllSzRTaW0xTkJ2NU5NaklXMFFRcnpSTGhEdC1PQy1TU2F6aXhXcGN6RkxCODZSNENMbEVxTWwyOVF1TEdnbERORWttS3N5V2ItUTE4OU5GQlRrbTdWS0pjNUNfNTBQZHpXcDlyc3NSU3pOaFFuRFZtLWRQY2QydE1sMm9SS0R0SmNkYWJvd01OTjFLczFzVHh2TmNyX1BodzgteGpnSkR0angzWG80eFFhQXQ4NU9NOVdzcG1RNnJsYnpoSzZhT0twZWRoLVBmUzYwV3l3TmhObV9xcWRYRW9PY1Nicnpoc2wtR19qNl9JZmRPVUM3MGVUV3d5YUJlVHMzNUdELXdvMmxPaHBOT3NjOW5sY19pLTJCWm4xdFFmZnE3dDBzbFlnYmFncHI0ZTE2bFlLX2FUdVlhemNSYWpEekxuRlFDdndLVlRhM19udkhLMnV5REIyeS1tZ2lJenNvRnUxeE1zZHRSSXB4OGRYdUlkZzREV09vQlo3bWd6MUYwS0lGX3NNVi1DMUl2QVluWjh3VlBIU1o5N3dYMVJOQWFCXzdmbmxNSFk1TkhSRUNFTWhwSXhfaWJqRXB3WUdPLW5qUzhsOGliX2FjbmZLN1FCN1R2dmxYdmpNTEpOWlU4N2MwcU1Zalo3RnZUem9YWEdRWVFWakFIUGk1U2VldHN6d2I3SmpaOExSX0dxaGhRRUdldGdiamkzdENVVC1keml4aS1XS0g2T25lOA==","email":"masalinas.gancedo@gmail.com"}}}
+
+**STEP03**: execute configuration
+
+```
+crc config set pull-secret-file ./pull-secret.txt
+```
+
+STEP04: start installation
+
+```
+crc start
+
+...
+...
+INFO Operators are stable (3/3)...                
+INFO Adding crc-admin and crc-developer contexts to kubeconfig... 
+Started the OpenShift cluster.
+
+The server is accessible via web console at:
+  https://console-openshift-console.apps-crc.testing
+
+Log in as administrator:
+  Username: kubeadmin
+  Password: yx9Rq-X4Mrd-XZLkU-UeyAI
+
+Log in as user:
+  Username: developer
+  Password: developer
+
+Use the 'oc' command line interface:
+  $ eval $(crc oc-env)
+  $ oc login -u developer https://api.crc.testing:6443
+```
