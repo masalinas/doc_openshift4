@@ -1,7 +1,7 @@
 # Description
 Install Openshift 4 with crc
 
-## Download the crc
+## Installation STEPS
 
 **STEP01**: download crc CLI
 
@@ -81,3 +81,9 @@ $ crc stop
 ```
 $ crc delete 
 ```
+
+## Some links
+
+- [IBM Openshift Local] (https://developer.ibm.com/blogs/install-openshift-4-on-your-laptop/)
+
+
