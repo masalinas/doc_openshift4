@@ -3,19 +3,27 @@ Install Openshift 4 with crc
 
 ## Download the crc
 
-**STEP01**: Download crc client from [Redhat Openshift Local](https://console.redhat.com/openshift/create/local)
+**STEP01**: download crc CLI
 
-**STEP02**: Download pull-secret.txt file from the same link
+Download crc client from [Redhat Openshift Local](https://console.redhat.com/openshift/create/local)
+
+**STEP02**: download pull secret for the installation
+
+Download pull-secret.txt file from the same link
 
 [pull-secret.txt](https://github.com/masalinas/doc_openshift4/files/14732976/pull-secret.txt)
 
 **STEP03**: execute configuration
+
+Configure pull secret before start
 
 ```
 $ crc config set pull-secret-file ./pull-secret.txt
 ```
 
 **STEP04**: start installation
+
+Start installation
 
 ```
 $ crc start
