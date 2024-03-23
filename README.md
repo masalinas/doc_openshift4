@@ -1,25 +1,24 @@
 # Description
 Install Openshift 4 with crc
 
-# Download the crc
+## Download the crc
 
 **STEP01**: Download crc client from [Redhat Openshift Local](https://console.redhat.com/openshift/create/local)
 
 **STEP02**: Download pull-secret.txt file from the same link
-
 
 [pull-secret.txt](https://github.com/masalinas/doc_openshift4/files/14732976/pull-secret.txt)
 
 **STEP03**: execute configuration
 
 ```
-crc config set pull-secret-file ./pull-secret.txt
+$ crc config set pull-secret-file ./pull-secret.txt
 ```
 
-STEP04: start installation
+**STEP04**: start installation
 
 ```
-crc start
+$ crc start
 
 ...
 ...
@@ -42,3 +41,25 @@ Use the 'oc' command line interface:
   $ eval $(crc oc-env)
   $ oc login -u developer https://api.crc.testing:6443
 ```
+
+**STEP05**: check status
+
+```
+$ crc status
+CRC VM:          Running
+OpenShift:       Running (v4.14.12)
+RAM Usage:       6.261GB of 9.353GB
+Disk Usage:      20.71GB of 32.68GB (Inside the CRC VM)
+Cache Usage:     38.18GB
+Cache Directory: /Users/miguel/.crc/cache
+```
+
+**STEP06**: access console
+
+```
+$ crc console
+```
+
+![Captura de pantalla 2024-03-23 a las 17 57 37](https://github.com/masalinas/doc_openshift4/assets/1216181/e313e583-b67e-4ca5-8960-ed10d936c24a)
+
+
